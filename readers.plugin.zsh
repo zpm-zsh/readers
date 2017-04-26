@@ -129,11 +129,11 @@ function gpgcat() {
 }
 
 function pdfcat() {
-  if [[ $1 == "http:"* ]] || [[ $1 == "https:"* ]] || [[ $1 == "ft"* ]]; then
+  if [[ $1 == "http:"* ]] || [[ $1 == "https:"* ]] || [[ $1 == "ftp:"* ]]; then
     FILE=$(mktemp -t XXXXX.pdf)
     curl -L --silent $1 > $FILE
   else
-    file=$1
+    FILE=$1
   fi
   pdftotext -eol unix -nopgbrk "$FILE" -
 }
