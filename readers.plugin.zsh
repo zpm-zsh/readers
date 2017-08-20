@@ -96,7 +96,7 @@ function hcat() {
   `whence pygmentize` -f 256 -g $FILE
 }
 
-DEPENDENCES_NPM+=( mdy )
+DEPENDENCES_NPM+=( msee )
 function mdcat() {
   if [[ -z $1 ]]; then
     FILE=$(mktemp -t XXXXX.md)
@@ -109,7 +109,7 @@ function mdcat() {
       FILE=$1
     fi
   fi
-  mdy "$FILE"
+  msee "$FILE"
 }
 DEPENDENCES_ARCH+=( gpg@gnupg )
 DEPENDENCES_DEBIAN+=( gpg@gnupg )
