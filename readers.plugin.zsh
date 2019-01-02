@@ -51,6 +51,10 @@ function cppcat() {
 }
 alias javacat=cppcat
 
+function shcat() {
+  FILE=$(_create_file $@)
+  $(whence pygmentize) -l shell $FILE
+}
 
 
 DEPENDENCES_NPM+=( msee )
