@@ -57,10 +57,10 @@ function shcat() {
 }
 
 
-DEPENDENCES_NPM+=( msee )
+DEPENDENCES_NPM+=( cli-md )
 function mdcat() {
   FILE=$(_create_file $@)
-  msee "$FILE"
+  cli-md "$FILE"
 }
 
 DEPENDENCES_ARCH+=( gpg@gnupg )
