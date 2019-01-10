@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
-DEPENDENCES_ARCH+=( curl pygmentize@pygmentize )
-DEPENDENCES_DEBIAN+=( curl pygmentize@python-pygments )
+DEPENDENCES_ARCH+=( curl bat )
+DEPENDENCES_DEBIAN+=( curl bat )
 
 function _create_file(){
   if [[ -z $1 ]]; then
@@ -20,40 +20,40 @@ function _create_file(){
 
 function hcat() {
   FILE=$(_create_file $@)
-  $(whence pygmentize) -g $FILE
+  $(whence bat) --style='numbers' --pager=never  $FILE
 }
 
 
 function htmlcat() {
   FILE=$(_create_file $@)
-  $(whence pygmentize) -l html $FILE
+  $(whence bat) --style='numbers' --pager=never -l html $FILE
 }
 alias xmlcat=htmlcat
 
 function csscat() {
   FILE=$(_create_file $@)
-  $(whence pygmentize) -l css $FILE
+  $(whence bat) --style='numbers' --pager=never -l css $FILE
 }
 
 function jscat() {
   FILE=$(_create_file $@)
-  $(whence pygmentize) -l javascript $FILE
+  $(whence bat) --style='numbers' --pager=never -l javascript $FILE
 }
 
 function jsoncat() {
   FILE=$(_create_file $@)
-  $(whence pygmentize) -l json $FILE
+  $(whence bat) --style='numbers' --pager=never -l json $FILE
 }
 
 function cppcat() {
   FILE=$(_create_file $@)
-  $(whence pygmentize) -l c_cpp $FILE
+  $(whence bat) --style='numbers' --pager=never -l cpp $FILE
 }
 alias javacat=cppcat
 
 function shcat() {
   FILE=$(_create_file $@)
-  $(whence pygmentize) -l shell $FILE
+  $(whence bat) --style='numbers' --pager=never -l shell $FILE
 }
 
 
