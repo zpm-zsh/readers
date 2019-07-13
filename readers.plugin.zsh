@@ -57,10 +57,10 @@ function shcat() {
 }
 
 
-DEPENDENCES_NPM+=( cli-md )
+DEPENDENCES_NPM+=( md@cli-marked )
 function mdcat() {
   FILE=$(_create_file $@)
-  cli-md "$FILE"
+  md "$FILE"
 }
 
 DEPENDENCES_ARCH+=( gpg@gnupg )
